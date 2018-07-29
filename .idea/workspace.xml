@@ -3,27 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="1e322292-7ec0-4350-8ae8-d7b2c843f811" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Bootstrap.php" afterPath="$PROJECT_DIR$/Bootstrap.php" />
-      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/contracts/IMigrationColumnResolver.php" afterPath="$PROJECT_DIR$/contracts/IMigrationColumnResolver.php" />
-      <change beforePath="$PROJECT_DIR$/contracts/IMigrationTableResolver.php" afterPath="$PROJECT_DIR$/contracts/IMigrationTableResolver.php" />
-      <change beforePath="$PROJECT_DIR$/gii/ByModelGenerator.php" afterPath="$PROJECT_DIR$/gii/ByModelGenerator.php" />
-      <change beforePath="$PROJECT_DIR$/gii/DataGenerator.php" afterPath="$PROJECT_DIR$/gii/DataGenerator.php" />
-      <change beforePath="$PROJECT_DIR$/gii/GeneratorTrait.php" afterPath="$PROJECT_DIR$/gii/GeneratorTrait.php" />
-      <change beforePath="$PROJECT_DIR$/gii/StructureGenerator.php" afterPath="$PROJECT_DIR$/gii/StructureGenerator.php" />
-      <change beforePath="$PROJECT_DIR$/gii/default_data/data_model.php" afterPath="$PROJECT_DIR$/gii/default_data/data_model.php" />
-      <change beforePath="$PROJECT_DIR$/gii/default_structure/mass.php" afterPath="$PROJECT_DIR$/gii/default_structure/mass.php" />
-      <change beforePath="$PROJECT_DIR$/gii/default_structure/migration.php" afterPath="$PROJECT_DIR$/gii/default_structure/migration.php" />
-      <change beforePath="$PROJECT_DIR$/gii/default_structure/relation.php" afterPath="$PROJECT_DIR$/gii/default_structure/relation.php" />
-      <change beforePath="$PROJECT_DIR$/gii/form_data.php" afterPath="$PROJECT_DIR$/gii/form_data.php" />
-      <change beforePath="$PROJECT_DIR$/resolver/BaseColumnResolver.php" afterPath="$PROJECT_DIR$/resolver/BaseColumnResolver.php" />
-      <change beforePath="$PROJECT_DIR$/resolver/FluentColumnResolver.php" afterPath="$PROJECT_DIR$/resolver/FluentColumnResolver.php" />
-      <change beforePath="$PROJECT_DIR$/resolver/ModelResolver.php" afterPath="$PROJECT_DIR$/resolver/ModelResolver.php" />
-      <change beforePath="$PROJECT_DIR$/resolver/PgFluentColumnResolver.php" afterPath="$PROJECT_DIR$/resolver/PgFluentColumnResolver.php" />
-      <change beforePath="$PROJECT_DIR$/resolver/PgRawColumnResolver.php" afterPath="$PROJECT_DIR$/resolver/PgRawColumnResolver.php" />
-      <change beforePath="$PROJECT_DIR$/resolver/RawColumnResolver.php" afterPath="$PROJECT_DIR$/resolver/RawColumnResolver.php" />
-      <change beforePath="$PROJECT_DIR$/resolver/TableResolver.php" afterPath="$PROJECT_DIR$/resolver/TableResolver.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,15 +16,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="193">
+              <first_editor relative-caret-position="4">
                 <caret line="14" column="85" lean-forward="false" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
                 <folding />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="migration.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gii/default_structure/migration.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="273">
+              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,6 +75,7 @@
         <option value="$PROJECT_DIR$/resolver/TableResolver.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/gii/default_structure/migration.php" />
       </list>
     </option>
   </component>
@@ -143,6 +133,17 @@
               <item name="migration" type="b2602c69:ProjectViewProjectNode" />
               <item name="migration" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="migration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="migration" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="gii" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="migration" type="b2602c69:ProjectViewProjectNode" />
+              <item name="migration" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="gii" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="default_structure" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -181,12 +182,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1532855771962</updated>
-      <workItem from="1532855773807" duration="2716000" />
+      <workItem from="1532855773807" duration="3375000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2716000" />
+    <option name="totallyTimeSpent" value="3375000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -440,11 +441,19 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="193">
+          <first_editor relative-caret-position="4">
             <caret line="14" column="85" lean-forward="false" selection-start-line="14" selection-start-column="85" selection-end-line="14" selection-end-column="85" />
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gii/default_structure/migration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -15,7 +15,6 @@
 echo "<?php\n";
 ?>
 
-use yii\db\Schema;
 use yii\db\Migration;
 
 class <?= $migrationName ?> extends Migration
