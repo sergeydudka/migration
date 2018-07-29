@@ -9,7 +9,7 @@ Migration Generator
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
-Either run
+Either run 
 
 ```
 php composer.phar require -dev --prefer-dist crudschool/yii2-migration-generator:~1.1
