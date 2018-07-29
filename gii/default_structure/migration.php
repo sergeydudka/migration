@@ -29,8 +29,12 @@ class <?= $migrationName ?> extends Migration
     public function safeUp()
     {
         $tableOptions = '<?=$generator->tableOptions?>';
-        $this->dropTable('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>');
-        $this->createTable(
+
+        if ($this->getDb()->getTableSchema('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>')) {
+            $this->dropTable('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>');
+        }
+
+$this->createTable(
             '<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',
             [
 <?php foreach ($tableColumns as $name => $data) :?>
