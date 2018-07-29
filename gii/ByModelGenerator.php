@@ -16,7 +16,7 @@ use Yii;
 /**
  * Class ByModelGenerator
  *
- * @package insolita\migrik\gii
+ * @package crudschool\migrik\gii
  */
 class ByModelGenerator extends Generator {
 	use GeneratorTrait;
@@ -317,7 +317,7 @@ class ByModelGenerator extends Generator {
 		/**
 		 * @var IModelResolver $modelResolver
 		 **/
-		$modelResolver = \Yii::createObject(['class' => 'insolita\migrik\contracts\IModelResolver'], [$model]);
+		$modelResolver = \Yii::createObject(['class' => 'crudschool\migrik\contracts\IModelResolver'], [$model]);
 		$info = [
 			'table' => $modelResolver->getTableName(),
 			'columns' => $modelResolver->getAttributes(),
@@ -338,7 +338,7 @@ class ByModelGenerator extends Generator {
 		/**
 		 * @var IPhpdocResolver $modelResolver
 		 **/
-		$modelResolver = \Yii::createObject(['class' => 'insolita\migrik\contracts\IPhpdocResolver'], [$model]);
+		$modelResolver = \Yii::createObject(['class' => 'crudschool\migrik\contracts\IPhpdocResolver'], [$model]);
 		$info = [
 			'db' => $modelResolver->getConnectionName(),
 			'table' => $modelResolver->getTableName(),

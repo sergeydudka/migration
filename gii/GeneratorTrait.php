@@ -12,7 +12,7 @@ use yii\base\UserException;
 /**
  * Class GeneratorTrait
  *
- * @package insolita\migrik\gii
+ * @package crudschool\migrik\gii
  */
 trait GeneratorTrait
 {

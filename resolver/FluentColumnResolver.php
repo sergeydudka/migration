@@ -13,7 +13,7 @@ use yii\helpers\StringHelper;
  * Class FluentColumnResolver
  * Generate columns in new yii2 fluent style
  *
- * @package insolita\migrik\resolver
+ * @package crudschool\migrik\resolver
  */
 class FluentColumnResolver extends BaseColumnResolver {
 	/**

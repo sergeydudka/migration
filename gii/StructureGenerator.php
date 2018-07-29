@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Insolita
+ * User: crudschool
  * Date: 08.12.14
  * Time: 8:03
  */
@@ -21,7 +21,7 @@ set_time_limit(0);
 /**
  * Class StructureGenerator
  *
- * @package insolita\migrik\gii
+ * @package crudschool\migrik\gii
  */
 class StructureGenerator extends \yii\gii\Generator {
 	const MOD_SINGLE = 'single';
@@ -140,7 +140,7 @@ class StructureGenerator extends \yii\gii\Generator {
 				[
 					['resolverClass'],
 					'validateClass',
-					'params' => ['extends' => 'insolita\migrik\contracts\IMigrationColumnResolver'],
+					'params' => ['extends' => 'crudschool\migrik\contracts\IMigrationColumnResolver'],
 					'skipOnEmpty' => true,
 				],
 				[['genmode'], 'in', 'range' => [self::MOD_SINGLE, self::MOD_BULK]],
@@ -201,7 +201,7 @@ class StructureGenerator extends \yii\gii\Generator {
 				'format' => 'fluent - like $this->text()->notNull()->defaultValue("foo") or raw "TEXT NOT NULL DEFAULT
                 \"foo\"" if custom resolver class configured, this option will be ignored',
 				'resolverClass' => 'Full-qualified class name for custom implementation of
-                \insolita\migrik\contracts\IMigrationColumnResolver',
+                \crudschool\migrik\contracts\IMigrationColumnResolver',
 				'prefix' => 'For correct migration names; format: \'m\' . date(\'ymd_His\'); Don`t change it, if you not sure! ',
 			]
 		);
@@ -294,6 +294,9 @@ class StructureGenerator extends \yii\gii\Generator {
 				$allRelations[] = $tableRelations;
 			}
 			$migrationName = $this->nextPrefix . '_' . $tableCaption;
+			$dataGenerator = new DataGenerator();
+			$dataGenerator->tableName = $tableName;
+			$tableData = $dataGenerator->generate();
 			$params = compact(
 				'tableName',
 				'tableCaption',
@@ -301,7 +304,8 @@ class StructureGenerator extends \yii\gii\Generator {
 				'migrationName',
 				'tableColumns',
 				'tableIndexes',
-				'tablePk'
+				'tablePk',
+				'tableData'
 			);
 			$files[] = new CodeFile(
 				Yii::getAlias($this->migrationPath) . '/' . $migrationName . '.php',
@@ -428,7 +432,7 @@ class StructureGenerator extends \yii\gii\Generator {
 			 * @var IMigrationTableResolver
 			 **/
 			$this->tableResolver = Yii::createObject(
-				['class' => 'insolita\migrik\contracts\IMigrationTableResolver'],
+				['class' => 'crudschool\migrik\contracts\IMigrationTableResolver'],
 				[$this->getDbConnection()]
 			);
 		}
@@ -467,24 +471,24 @@ class StructureGenerator extends \yii\gii\Generator {
 			switch ($this->getDbConnection()->driverName) {
 				case 'pgsql':
 					{
-						return Yii::createObject(['class' => 'insolita\migrik\resolver\PgFluentColumnResolver'], $params);
+						return Yii::createObject(['class' => 'crudschool\migrik\resolver\PgFluentColumnResolver'], $params);
 					}
 				case 'mysql':
 				default:
 					{
-						return Yii::createObject(['class' => 'insolita\migrik\resolver\FluentColumnResolver'], $params);
+						return Yii::createObject(['class' => 'crudschool\migrik\resolver\FluentColumnResolver'], $params);
 					}
 			}
 		} else {
 			switch ($this->getDbConnection()->driverName) {
 				case 'pgsql':
 					{
-						return Yii::createObject(['class' => 'insolita\migrik\resolver\PgRawColumnResolver'], $params);
+						return Yii::createObject(['class' => 'crudschool\migrik\resolver\PgRawColumnResolver'], $params);
 					}
 				case 'mysql':
 				default:
 					{
-						return Yii::createObject(['class' => 'insolita\migrik\resolver\RawColumnResolver'], $params);
+						return Yii::createObject(['class' => 'crudschool\migrik\resolver\RawColumnResolver'], $params);
 					}
 			}
 		}

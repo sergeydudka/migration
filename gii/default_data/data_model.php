@@ -3,7 +3,7 @@
  * This view is used by console/controllers/MigrateController.php
  * The following variables are available in this view:
  *  @var $migrationName string the new migration class name
- *  @var insolita\migrik\gii\DataGenerator $generator
+ *  @var crudschool\migrik\gii\DataGenerator $generator
  */
 
 echo "<?php\n";

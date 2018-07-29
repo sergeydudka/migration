@@ -13,8 +13,8 @@ echo $form->field($generator, 'migrationPath');
 echo $form->field($generator, 'usePrefix')->checkbox();
 echo $form->field($generator, 'insertMode')
     ->dropDownList([
-        \insolita\migrik\gii\DataGenerator::MODE_QUERY=>'as batchInsert',
-        \insolita\migrik\gii\DataGenerator::MODE_MODEL=>'as Model instances'
+        \crudschool\migrik\gii\DataGenerator::MODE_QUERY=>'as batchInsert',
+        \crudschool\migrik\gii\DataGenerator::MODE_MODEL=>'as Model instances'
                    ]);
 echo $form->field($generator, 'modelClass');
 echo $form->field($generator, 'prefix');

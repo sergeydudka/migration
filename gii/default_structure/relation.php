@@ -5,7 +5,7 @@
  */
 /** @var $migrationName string the new migration class name
  *  @var array                                  $tableRelations
- *  @var insolita\migrik\gii\StructureGenerator $generator
+ *  @var crudschool\migrik\gii\StructureGenerator $generator
  *  @var array $fkProps
  */
 

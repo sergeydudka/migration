@@ -14,7 +14,7 @@ use yii\helpers\StringHelper;
 /**
  * Class DataGenerator
  *
- * @package insolita\migrik\gii
+ * @package crudschool\migrik\gii
  */
 class DataGenerator extends Generator {
 	use GeneratorTrait;
@@ -183,7 +183,7 @@ class DataGenerator extends Generator {
 		$this->tableAlias = $this->getTableAlias($this->tableCaption);
 		$this->tableColumns = $this->prepareTableColumns();
 		$this->rawData = $this->getTableData($this->tableName, $this->tableColumns);
-		return call_user_func([$this, $this->insertMode . 'ModeGenerate']);
+		return $this;
 		
 	}
 	

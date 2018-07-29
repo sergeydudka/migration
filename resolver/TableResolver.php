@@ -12,7 +12,7 @@ use yii\db\TableSchema;
 /**
  * Class TableResolver
  *
- * @package insolita\migrik\resolver
+ * @package crudschool\migrik\resolver
  */
 class TableResolver implements IMigrationTableResolver {
 	/**

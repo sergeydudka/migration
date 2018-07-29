@@ -9,7 +9,7 @@
  *  @var array $tableColumns
  *  @var array $tableIndexes
  *  @var array $tablePk
- *  @var insolita\migrik\gii\StructureGenerator $generator
+ *  @var crudschool\migrik\gii\StructureGenerator $generator
  */
 
 echo "<?php\n";
@@ -30,7 +30,7 @@ class <?= $migrationName ?> extends Migration
     public function safeUp()
     {
         $tableOptions = '<?=$generator->tableOptions?>';
-
+        $this->dropTable('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>');
         $this->createTable(
             '<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',
             [
@@ -49,7 +49,11 @@ class <?= $migrationName ?> extends Migration
 <?php if (!empty($tablePk)) : ?>
         $this->addPrimaryKey('pk_on_<?=$tableName?>','<?=$tableAlias?>',['<?=implode("','", $tablePk)?>']);
 <?php endif?>
-
+        $this->batchInsert('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',
+            ["<?= implode('", "', $tableData->tableColumns) ?>"],
+            <?= \yii\helpers\VarDumper::export($tableData->rawData) ?>
+            
+        );
     }
 
     public function safeDown()

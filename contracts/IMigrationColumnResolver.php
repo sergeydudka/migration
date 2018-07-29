@@ -11,7 +11,7 @@ use yii\db\TableSchema;
 /**
  * Interface IMigrationColumnResolver
  *
- * @package insolita\migrik\contracts
+ * @package crudschool\migrik\contracts
  */
 interface IMigrationColumnResolver {
 	/**

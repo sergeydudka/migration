@@ -12,7 +12,7 @@ use yii\base\UserException;
 /**
  * Class ModelResolver
  *
- * @package insolita\migrik\resolver
+ * @package crudschool\migrik\resolver
  */
 class ModelResolver implements IModelResolver {
 	/**

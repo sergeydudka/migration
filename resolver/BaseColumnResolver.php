@@ -17,7 +17,7 @@ use yii\helpers\StringHelper;
  * Class BaseColumnResolver
  * Abstraction Class for construct migrations for columns
  *
- * @package insolita\migrik\resolver
+ * @package crudschool\migrik\resolver
  */
 abstract class BaseColumnResolver implements IMigrationColumnResolver {
 	/**

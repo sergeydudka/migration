@@ -13,7 +13,7 @@ use yii\helpers\StringHelper;
  * Class RawColumnResolver
  * Resolve columns for migrations as strings with sql definition
  *
- * @package insolita\migrik\resolver
+ * @package crudschool\migrik\resolver
  */
 class RawColumnResolver extends BaseColumnResolver {
 	

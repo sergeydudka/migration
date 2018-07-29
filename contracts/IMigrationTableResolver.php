@@ -10,7 +10,7 @@ use yii\db\Connection;
 /**
  * Interface IMigrationTableResolver
  *
- * @package insolita\migrik\contracts
+ * @package crudschool\migrik\contracts
  */
 interface IMigrationTableResolver {
 	/**
