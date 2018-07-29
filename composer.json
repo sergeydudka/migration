@@ -1,0 +1,33 @@
+{
+  "name": "crudschool/yii2-migration-generator",
+  "description": "Set of gii tools for generating  files for migration by schema of table , phpdoc or table data",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii2",
+    "extension"
+  ],
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "authors": [
+    {
+      "name": "Sergey Dudka",
+      "email": "sergey.dudka@urk.net"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "crudschool\\migrik\\": ""
+    }
+  },
+  "require-dev": {
+    "yiisoft/yii2-gii": "*",
+    "nesbot/carbon": "*",
+    "vlucas/phpdotenv": "*"
+  },
+  "extra": {
+    "bootstrap": "crudschool\\migrik\\Bootstrap"
+  }
+}
