@@ -12,17 +12,17 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require -dev --prefer-dist crudschool/yii2-migration-generator:~2.3
+php composer.phar require -dev --prefer-dist crudschool/yii2-migration-generator:~1.1
 ```
 or 
 ```
-composer require -dev --prefer-dist crudschool/yii2-migration-generator:~2.3
+composer require -dev --prefer-dist crudschool/yii2-migration-generator:~1.1
 ```
 
 or add
 
 ```
-"crudschool/yii2-migration-generator": "~2.3"
+"crudschool/yii2-migration-generator": "~1.1"
 ```
 
 to the require-dev section of your `composer.json` file.
