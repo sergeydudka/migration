@@ -52,11 +52,14 @@ $this->createTable(
 <?php if (!empty($tablePk)) : ?>
         $this->addPrimaryKey('pk_on_<?=$tableName?>','<?=$tableAlias?>',['<?=implode("','", $tablePk)?>']);
 <?php endif?>
-        $this->batchInsert('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',
-            ["<?= implode('", "', $tableData->tableColumns) ?>"],
-            <?= \yii\helpers\VarDumper::export($tableData->rawData) ?>
-            
+<?php if ($tableData->rawData) : ?>
+    $this->batchInsert('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',
+        ["<?= implode('", "', $tableData->tableColumns) ?>"],
+        <?= \yii\helpers\VarDumper::export($tableData->rawData) ?>
+    
         );
+<?php endif?>
+    
     }
 
     public function safeDown()

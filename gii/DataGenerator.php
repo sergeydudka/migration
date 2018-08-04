@@ -248,13 +248,7 @@ class DataGenerator extends Generator {
 		if (!empty($data)) {
 			return $data;
 		} else {
-			$tableSchema = $this->getDbConnection()->getTableSchema($tableName);
-			foreach ($tableSchema->columns as $column) {
-				if (in_array($column->name, $columns)) {
-					$data[$column->name] = "";
-				}
-			}
-			return [$data];
+			return false;
 		}
 	}
 	
