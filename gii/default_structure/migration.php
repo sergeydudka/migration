@@ -20,60 +20,58 @@ use yii\db\Migration;
 class <?= $migrationName ?> extends Migration
 {
 
-    public function init()
-    {
-        $this->db = '<?=$generator->db?>';
-        parent::init();
-    }
+public function init()
+{
+$this->db = '<?=$generator->db?>';
+parent::init();
+}
 
-    public function safeUp()
-    {
-        $tableOptions = '<?=$generator->tableOptions?>';
+public function safeUp()
+{
+$tableOptions = '<?=$generator->tableOptions?>';
 
-        if ($this->getDb()->getTableSchema('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>')) {
-            $this->dropTable('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>');
-        }
+if ($this->getDb()->getTableSchema('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>')) {
+$this->dropTable('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>');
+}
 
 $this->createTable(
-            '<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',
-            [
+'<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',
+[
 <?php foreach ($tableColumns as $name => $data) :?>
-                '<?=$name?>'=> <?=$data;?>,
+    '<?=$name?>'=> <?=$data;?>,
 <?php endforeach;?>
-            ],$tableOptions
-        );
+],$tableOptions
+);
 <?php if (!empty($tableIndexes) && is_array($tableIndexes)) : ?>
-<?php foreach ($tableIndexes as $name => $data) :?>
-<?php if ($name!='PRIMARY') : ?>
-        $this->createIndex('<?=$name?>','<?=$tableAlias?>',['<?=implode("','", array_values($data['cols']))?>'],<?=$data['isuniq']?'true':'false'?>);
-<?php endif;?>
-<?php endforeach;?>
+	<?php foreach ($tableIndexes as $name => $data) :?>
+		<?php if ($name!='PRIMARY') : ?>
+            $this->createIndex('<?=$name?>','<?=$tableAlias?>',['<?=implode("','", array_values($data['cols']))?>'],<?=$data['isuniq']?'true':'false'?>);
+		<?php endif;?>
+	<?php endforeach;?>
 <?php endif?>
 <?php if (!empty($tablePk)) : ?>
-        $this->addPrimaryKey('pk_on_<?=$tableName?>','<?=$tableAlias?>',['<?=implode("','", $tablePk)?>']);
+    $this->addPrimaryKey('pk_on_<?=$tableName?>','<?=$tableAlias?>',['<?=implode("','", $tablePk)?>']);
 <?php endif?>
 <?php if ($tableData->rawData) : ?>
-    $this->batchInsert('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',
-        ["<?= implode('", "', $tableData->tableColumns) ?>"],
-        <?= \yii\helpers\VarDumper::export($tableData->rawData) ?>
-    
-        );
+	<?php foreach($tableData->rawData as $data) { ?>
+        $this->insert('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>',<?= \yii\helpers\VarDumper::export($data) ?>);
+	<?php } ?>
 <?php endif?>
-    
-    }
 
-    public function safeDown()
-    {
+}
+
+public function safeDown()
+{
 <?php if (!empty($tablePk)) : ?>
     $this->dropPrimaryKey('pk_on_<?=$tableName?>','<?=$tableAlias?>');
 <?php endif?>
 <?php if (!empty($tableIndexes) && is_array($tableIndexes)) : ?>
-<?php foreach ($tableIndexes as $name => $data) :?>
-<?php if ($name!='PRIMARY') : ?>
-        $this->dropIndex('<?=$name?>', '<?=$tableAlias?>');
-<?php endif;?>
-<?php endforeach;?>
+	<?php foreach ($tableIndexes as $name => $data) :?>
+		<?php if ($name!='PRIMARY') : ?>
+            $this->dropIndex('<?=$name?>', '<?=$tableAlias?>');
+		<?php endif;?>
+	<?php endforeach;?>
 <?php endif?>
-        $this->dropTable('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>');
-    }
+$this->dropTable('<?= ($generator->usePrefix)?$tableAlias:$tableName ?>');
+}
 }
